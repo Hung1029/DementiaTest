@@ -124,6 +124,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &7222457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7222458}
+  m_Layer: 0
+  m_Name: P
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7222458
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7222457}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 17.100142, y: 198.60129, z: -333.78085}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &132219079
 GameObject:
   m_ObjectHideFlags: 0
@@ -3985,13 +4015,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9a646c5b71564478a728d40a72b41b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  correct: {fileID: 0}
+  mistake: {fileID: 0}
+  normal: {fileID: 0}
+  G1Buttons: []
+  G2Buttons: []
   CountGame: {fileID: 559063437}
   OrderGame: {fileID: 843824075}
   canControl: {fileID: 1589241480}
+  gameControl: {fileID: 0}
   number1: 0
   number2: 0
-  text1: {fileID: 833726141}
-  text2: {fileID: 1388174997}
   P1orderG1: 0
   P2orderG1: 0
   P1orderG2: 0
@@ -4311,6 +4345,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7309bfe18b1a8a4bb156bf020cd4c73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameControl: {fileID: 0}
+  Ycan: {fileID: 0}
+  Rcan: {fileID: 0}
+  Bcan: {fileID: 0}
 --- !u!4 &1589241481
 Transform:
   m_ObjectHideFlags: 0
