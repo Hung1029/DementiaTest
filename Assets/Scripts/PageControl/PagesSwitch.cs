@@ -7,11 +7,11 @@ public class PagesSwitch : MonoBehaviour
 {
     public string scenename;
     public GameObject pageinit;
-    public GameObject pageMain;
     public GameObject pageNoviceTeaching;
-    public GameObject[] page2;
+    public GameObject pagesettings;
+    public GameObject modalsignin;
+    public GameObject modalKnowledge;
     public bool isNewbie;
-    public bool pMain;
     public bool pNewbie;
     public bool p2;
     public int time;
@@ -28,16 +28,12 @@ public class PagesSwitch : MonoBehaviour
         //     pageMain.SetActive(false);
         //     pageNoviceTeaching.SetActive(true);
         // }
-        for(int i=0; i<4; i++)
-        {
-            page2[i].SetActive(false);
-        }
-        pMain = false;
         pNewbie = false;
         p2 = false;
+        modalsignin.SetActive(false);
+        modalKnowledge.SetActive(false);
         // Time();
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -46,7 +42,6 @@ public class PagesSwitch : MonoBehaviour
     public void GameStart()
     {
         pageinit.SetActive(false);
-        page2[0].SetActive(true);
     }
     void Time()
     {
@@ -57,62 +52,37 @@ public class PagesSwitch : MonoBehaviour
         pageinit.SetActive(false);
         if(!isNewbie)
         {
-            pageMain.SetActive(true);
             pageNoviceTeaching.SetActive(false);
-            pMain = true;
         }
         else
         {
-            pageMain.SetActive(false);
             pageNoviceTeaching.SetActive(true);
             pNewbie = true;
         }
     }
     public void SwitchtoPages_GameList()
     {
-        pageMain.SetActive(false);
-        for(int i=0; i<4; i++)
-        {
-            page2[i].SetActive(false);
-        }
-        page2[0].SetActive(true);
-    }
-    public void SwitchtoPages_TasksList()
-    {
-        pageMain.SetActive(false);
-        for(int i=0; i<4; i++)
-        {
-            page2[i].SetActive(false);
-        }
-        page2[1].SetActive(true);
-    }
-    public void SwitchtoPages_Reward()
-    {
-        pageMain.SetActive(false);
-        for(int i=0; i<4; i++)
-        {
-            page2[i].SetActive(false);
-        }
-        page2[2].SetActive(true);
+        
     }
     public void SwitchtoPages_Setting()
     {
-        //第一頁去第二頁
-        pageMain.SetActive(false);
-        for(int i=0; i<4; i++)
-        {
-            page2[i].SetActive(false);
-        }
-        page2[3].SetActive(true);
+         pagesettings.SetActive(true);
     }
-    public void SwitchtoMain()
+    public void SignIn()
     {
-        //第二頁去第一頁
-        pageMain.SetActive(true);
-        for(int i=0; i<4; i++)
-        {
-            page2[i].SetActive(false);
-        }
+        modalsignin.SetActive(true);
+    }
+    public void SignInBac()
+    {
+        modalsignin.SetActive(false);
+    }
+    public void Knowledge()
+    {
+        modalKnowledge.SetActive(true);
+    }
+    public void KnowledgeBac()
+    {
+        modalKnowledge.SetActive(false);
     }
     public void GoToGameScene()
     {
