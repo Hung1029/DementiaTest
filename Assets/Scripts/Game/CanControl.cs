@@ -11,7 +11,7 @@ public class CanControl : MonoBehaviour
     public Sprite Ycan;
     public Sprite Rcan;
     public Sprite Bcan;
-
+    public GameObject[] Can;
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +19,10 @@ public class CanControl : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
         GameManager.instance.ordergame1Start = true;
         gameControl = gameControl.GetComponent<GameControl>();
-        GameManager.instance.Can[0].transform.localPosition = new Vector3(-1500,-32,0);
-        GameManager.instance.Can[1].transform.localPosition = new Vector3(-1700,-32,0);
-        GameManager.instance.Can[2].transform.localPosition = new Vector3(-1900,-32,0);
+        
+        Can[0].transform.localPosition = new Vector3(-1500,-32,0);
+        Can[1].transform.localPosition = new Vector3(-1700,-32,0);
+        Can[2].transform.localPosition = new Vector3(-1900,-32,0);
     }
 
     // Update is called once per frame
@@ -33,9 +34,9 @@ public class CanControl : MonoBehaviour
     {
         if(game2Start == false)
         {
-            GameManager.instance.Can[0].transform.localPosition = new Vector3(-1500,-32,0);
-            GameManager.instance.Can[1].transform.localPosition = new Vector3(-1700,-32,0);
-            GameManager.instance.Can[2].transform.localPosition = new Vector3(-1900,-32,0);
+            Can[0].transform.localPosition = new Vector3(-1500,-32,0);
+            Can[1].transform.localPosition = new Vector3(-1700,-32,0);
+            Can[2].transform.localPosition = new Vector3(-1900,-32,0);
 
             gameControl.canPush = false;
             gameControl.OrderGame();
@@ -46,23 +47,23 @@ public class CanControl : MonoBehaviour
     {
         if(GameManager.instance.ordergame1Start)
         {
-            GameManager.instance.Can[0].GetComponent<CanSpeedControl>().speedX = 1500;
-            GameManager.instance.Can[1].GetComponent<CanSpeedControl>().speedX = 1000;
-            GameManager.instance.Can[2].GetComponent<CanSpeedControl>().speedX = 800;
+            Can[0].GetComponent<CanSpeedControl>().speedX = 1500;
+            Can[1].GetComponent<CanSpeedControl>().speedX = 1000;
+            Can[2].GetComponent<CanSpeedControl>().speedX = 800;
 
-            GameManager.instance.Can[0].GetComponent<Image>().sprite = Ycan;
-            GameManager.instance.Can[1].GetComponent<Image>().sprite = Rcan;
-            GameManager.instance.Can[2].GetComponent<Image>().sprite = Bcan;
+            Can[0].GetComponent<Image>().sprite = Ycan;
+            Can[1].GetComponent<Image>().sprite = Rcan;
+            Can[2].GetComponent<Image>().sprite = Bcan;
         }
         if(GameManager.instance.ordergame2Start)
         {
-            GameManager.instance.Can[0].GetComponent<CanSpeedControl>().speedX = 1500;
-            GameManager.instance.Can[1].GetComponent<CanSpeedControl>().speedX = 1000;
-            GameManager.instance.Can[2].GetComponent<CanSpeedControl>().speedX = 800;
+            Can[0].GetComponent<CanSpeedControl>().speedX = 1500;
+            Can[1].GetComponent<CanSpeedControl>().speedX = 1000;
+            Can[2].GetComponent<CanSpeedControl>().speedX = 800;
 
-            GameManager.instance.Can[0].GetComponent<Image>().sprite = Bcan;
-            GameManager.instance.Can[1].GetComponent<Image>().sprite = Bcan;
-            GameManager.instance.Can[2].GetComponent<Image>().sprite = Rcan;
+            Can[0].GetComponent<Image>().sprite = Bcan;
+            Can[1].GetComponent<Image>().sprite = Bcan;
+            Can[2].GetComponent<Image>().sprite = Rcan;
         }
     }
 }

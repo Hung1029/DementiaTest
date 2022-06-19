@@ -11,6 +11,7 @@ public class PagesSwitch : MonoBehaviour
     public GameObject pagesettings;
     public GameObject modalsignin;
     public GameObject modalKnowledge;
+    public GameObject Day1seal;
     public bool isNewbie;
     public bool pNewbie;
     public bool p2;
@@ -37,7 +38,14 @@ public class PagesSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(GameManager.instance.Day1missioncompleted)
+        {
+            Day1seal.SetActive(true);
+        }
+        else
+        {
+            Day1seal.SetActive(false);
+        }
     }
     public void GameStart()
     {
