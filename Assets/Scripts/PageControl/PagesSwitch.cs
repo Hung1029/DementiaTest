@@ -10,7 +10,8 @@ public class PagesSwitch : MonoBehaviour
     public GameObject pageNoviceTeaching;
     public GameObject pagesettings;
     public GameObject modalsignin;
-    public GameObject modalKnowledge;
+    public GameObject modalKnowledgeReview;
+    public GameObject modalMusic;
     public GameObject Day1seal;
     public bool isNewbie;
     public bool pNewbie;
@@ -32,7 +33,8 @@ public class PagesSwitch : MonoBehaviour
         pNewbie = false;
         p2 = false;
         modalsignin.SetActive(false);
-        modalKnowledge.SetActive(false);
+        modalKnowledgeReview.SetActive(false);
+        modalMusic.SetActive(false);
         // Time();
     }
     // Update is called once per frame
@@ -84,13 +86,21 @@ public class PagesSwitch : MonoBehaviour
     {
         modalsignin.SetActive(false);
     }
-    public void Knowledge()
+    public void KnowledgeReview()
     {
-        modalKnowledge.SetActive(true);
+        modalKnowledgeReview.SetActive(true);
     }
-    public void KnowledgeBac()
+    public void KnowledgeReviewBac()
     {
-        modalKnowledge.SetActive(false);
+        modalKnowledgeReview.SetActive(false);
+    }
+    public void KnowledgeMusic()
+    {
+        modalMusic.SetActive(true);
+    }
+    public void KnowledgeMusicBac()
+    {
+        modalMusic.SetActive(false);
     }
     public void GoToGameScene()
     {
