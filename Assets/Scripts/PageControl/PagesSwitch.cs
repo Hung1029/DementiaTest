@@ -81,7 +81,16 @@ public class PagesSwitch : MonoBehaviour
     public void SignIn()
     {
         modalsignin.SetActive(true);
+        if(GameManager.instance.Day1missioncompleted)
+        {
+            Day1seal.GetComponent<Seal>().stamp = true;
+            // Invoke("Stamp",1.1f);
+        }
     }
+    // void Stamp()
+    // {
+    //     modalMusic.SetActive(true);
+    // }
     public void SignInBac()
     {
         modalsignin.SetActive(false);
