@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CanSpeedControl : MonoBehaviour
 {
+    GameControl gameControl;
     RectTransform rectTransform;
     public float speedX;
     public GameObject moveend;
@@ -14,6 +15,8 @@ public class CanSpeedControl : MonoBehaviour
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
+        
+        gameControl = GameObject.Find("GameControl").GetComponent<GameControl>();
     }
 
     // Update is called once per frame
@@ -24,7 +27,7 @@ public class CanSpeedControl : MonoBehaviour
 
     void CanMove()
     {
-        if(GameManager.instance.gameStart == true)
+        if(gameControl.gameStart == true)
         {
             gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, moveend.transform.localPosition,speedX*Time.deltaTime);
         }

@@ -17,7 +17,9 @@ public class CanControl : MonoBehaviour
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
-        GameManager.instance.ordergame1Start = true;
+
+        gameControl.ordergame1Start = true;
+
         gameControl = gameControl.GetComponent<GameControl>();
         
         Can[0].transform.localPosition = new Vector3(-1500,-32,0);
@@ -45,7 +47,7 @@ public class CanControl : MonoBehaviour
     }
     void CanSpeedControl()
     {
-        if(GameManager.instance.ordergame1Start)
+        if(gameControl.ordergame1Start)
         {
             Can[0].GetComponent<CanSpeedControl>().speedX = 1500;
             Can[1].GetComponent<CanSpeedControl>().speedX = 1000;
@@ -55,7 +57,7 @@ public class CanControl : MonoBehaviour
             Can[1].GetComponent<Image>().sprite = Rcan;
             Can[2].GetComponent<Image>().sprite = Bcan;
         }
-        if(GameManager.instance.ordergame2Start)
+        if(gameControl.ordergame2Start)
         {
             Can[0].GetComponent<CanSpeedControl>().speedX = 1500;
             Can[1].GetComponent<CanSpeedControl>().speedX = 1000;

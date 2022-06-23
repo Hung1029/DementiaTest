@@ -69,7 +69,9 @@ public class ButtonControl : MonoBehaviour
         CountGame.SetActive(false);
         OrderGame.SetActive(true);
         gameControl.canPush = false;
-        GameManager.instance.gameStart = false;
+
+        gameControl.gameStart = false;
+
         gameControl.OrderGame();
         P1countG1 = false;
     }
@@ -126,15 +128,16 @@ public class ButtonControl : MonoBehaviour
     // 第二關
     public void Game2Control()
     {
-        if(P1orderG2 == true && P2orderG2 == true && GameManager.instance.ordergame1Start == true)
+        if(P1orderG2 == true && P2orderG2 == true && gameControl.ordergame1Start == true)
         {
             Invoke("Game2GameOver",2f);
         }
     }
     void Game2GameOver()
     {
-        GameManager.instance.ordergame1Start = false;
-        GameManager.instance.ordergame2Start = true;
+        gameControl.ordergame1Start = false;
+        gameControl.ordergame2Start = true;
+
         canControl.GameRestart();
         for(int i=0; i<6; i++)
         {
@@ -232,7 +235,9 @@ public class ButtonControl : MonoBehaviour
                 p1button3 = false;
                 P1orderG1 = false;
                 P1orderG2 = true;
-                GameManager.instance.gameStart = false;
+
+                gameControl.gameStart = false;
+
                 for(int i=0; i<3; i++)
                 {
                     G2Buttons[i].sprite = correct;
@@ -259,7 +264,9 @@ public class ButtonControl : MonoBehaviour
                 p1button2 = false;
                 p1button3 = false;
                 P1orderG2 = false;
-                GameManager.instance.gameStart = false;
+
+                gameControl.gameStart = false;
+
                 for(int i=0; i<3; i++)
                 {
                     G2Buttons[i].sprite = correct;
@@ -371,7 +378,9 @@ public class ButtonControl : MonoBehaviour
                 p2button3 = false;
                 P2orderG1 = false;
                 P2orderG2 = true;
-                GameManager.instance.gameStart = false;
+
+                gameControl.gameStart = false;
+
                 for(int i=3; i<6; i++)
                 {
                     G2Buttons[i].sprite = correct;
@@ -397,7 +406,9 @@ public class ButtonControl : MonoBehaviour
                 p2button2 = false;
                 p2button3 = false;
                 P2orderG2 = false;
-                GameManager.instance.gameStart = false;
+
+                gameControl.gameStart = false;
+
                 for(int i=3; i<6; i++)
                 {
                     G2Buttons[i].sprite = correct;
