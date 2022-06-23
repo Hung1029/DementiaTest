@@ -6,69 +6,47 @@ using UnityEngine.SceneManagement;
 public class PagesSwitch : MonoBehaviour
 {
     public string scenename;
-    public GameObject pageinit;
-    public GameObject pageNoviceTeaching;
+    
     public GameObject pagesettings;
     public GameObject modalsignin;
     public GameObject modalKnowledgeReview;
     public GameObject modalMusic;
     public GameObject Day1seal;
+    public GameObject Day1stamped;
+    public GameObject Useteaching;
     public bool isNewbie;
-    public bool pNewbie;
-    public bool p2;
-    public int time;
+    
     // Start is called before the first frame update
     void Start()
     {
-        // if(!isNewbie)
-        // {
-        //     pageMain.SetActive(true);
-        //     pageNoviceTeaching.SetActive(false);
-        // }
-        // else
-        // {
-        //     pageMain.SetActive(false);
-        //     pageNoviceTeaching.SetActive(true);
-        // }
-        pNewbie = false;
-        p2 = false;
+        if(!GameManager.instance.isNewbie)
+        {
+            Useteaching.SetActive(false);
+        }
+        else
+        {
+            Useteaching.SetActive(true);
+        }
+        Invoke("Noviceteaching",10f);
         modalsignin.SetActive(false);
         modalKnowledgeReview.SetActive(false);
         modalMusic.SetActive(false);
-        // Time();
+        Day1seal.SetActive(false);
+        pagesettings.SetActive(false);
     }
     // Update is called once per frame
     void Update()
     {
-        if(GameManager.instance.Day1missioncompleted)
-        {
-            Day1seal.SetActive(true);
-        }
-        else
+        if(GameManager.instance.Day1stamped)
         {
             Day1seal.SetActive(false);
+            Day1stamped.SetActive(true);
         }
     }
-    public void GameStart()
+    void Noviceteaching()
     {
-        pageinit.SetActive(false);
-    }
-    void Time()
-    {
-        Invoke("InitPageToPageMain",time);
-    }
-    void InitPageToPageMain()
-    {
-        pageinit.SetActive(false);
-        if(!isNewbie)
-        {
-            pageNoviceTeaching.SetActive(false);
-        }
-        else
-        {
-            pageNoviceTeaching.SetActive(true);
-            pNewbie = true;
-        }
+        Useteaching.SetActive(false);
+        GameManager.instance.isNewbie = false;
     }
     public void SwitchtoPages_GameList()
     {
@@ -76,7 +54,11 @@ public class PagesSwitch : MonoBehaviour
     }
     public void SwitchtoPages_Setting()
     {
-         pagesettings.SetActive(true);
+        pagesettings.SetActive(true);
+    }
+    public void SwitchtoPages_SettingBac()
+    {
+        pagesettings.SetActive(false);
     }
     public void SignIn()
     {
@@ -84,13 +66,13 @@ public class PagesSwitch : MonoBehaviour
         if(GameManager.instance.Day1missioncompleted)
         {
             Day1seal.GetComponent<Seal>().stamp = true;
-            // Invoke("Stamp",1.1f);
+            Invoke("Stamp",1f);
         }
     }
-    // void Stamp()
-    // {
-    //     modalMusic.SetActive(true);
-    // }
+    void Stamp()
+    {
+        Day1seal.SetActive(true);
+    }
     public void SignInBac()
     {
         modalsignin.SetActive(false);

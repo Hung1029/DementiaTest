@@ -5,12 +5,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public bool Day1missioncompleted;
+    public bool Day1stamped;
     
     public static GameManager instance;
     public bool gameStart;
     public bool ordergameStart;
     public bool ordergame1Start;
     public bool ordergame2Start;
+    public bool isNewbie;
     
     void Awake()
     {

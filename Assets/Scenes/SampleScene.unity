@@ -133,6 +133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7222458}
+  - component: {fileID: 7222459}
   m_Layer: 0
   m_Name: P
   m_TagString: Untagged
@@ -154,6 +155,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7222459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7222457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf440ea319f139e41ad44ac36dc997e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenename: Main
 --- !u!1 &132219079
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,17 +1201,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e41ac40600310bc4c8cc7ef537bbc3b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Day1missioncompleted: 0
   gameStart: 0
   ordergameStart: 0
   ordergame1Start: 0
   ordergame2Start: 0
-  Can:
-  - {fileID: 147968594}
-  - {fileID: 151847910}
-  - {fileID: 845310182}
-  - {fileID: 1119656963}
-  - {fileID: 2115238531}
-  - {fileID: 933830832}
+  isNewbie: 0
 --- !u!4 &413332691
 Transform:
   m_ObjectHideFlags: 0
@@ -4349,6 +4358,7 @@ MonoBehaviour:
   Ycan: {fileID: 0}
   Rcan: {fileID: 0}
   Bcan: {fileID: 0}
+  Can: []
 --- !u!4 &1589241481
 Transform:
   m_ObjectHideFlags: 0
