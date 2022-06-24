@@ -20,6 +20,8 @@ public class ButtonControl : MonoBehaviour
     
     private bool P1countG1;
     private bool P2countG1;
+    private bool P1countG2;
+    private bool P2countG2;
 
     public bool P1orderG1, P2orderG1;
     public bool P1orderG2, P2orderG2;
@@ -54,6 +56,10 @@ public class ButtonControl : MonoBehaviour
         Game2Control();
         P1OrderGame();
         P2OrderGame();
+        if(P1countG2 == true && P2countG2 == true)
+        {
+            gameControl.gameOver = true;
+        }
     }
 
     //第一關
@@ -264,6 +270,7 @@ public class ButtonControl : MonoBehaviour
                 p1button2 = false;
                 p1button3 = false;
                 P1orderG2 = false;
+                P1countG2 = true;
 
                 gameControl.gameStart = false;
 
@@ -406,6 +413,7 @@ public class ButtonControl : MonoBehaviour
                 p2button2 = false;
                 p2button3 = false;
                 P2orderG2 = false;
+                P2countG2 = true;
 
                 gameControl.gameStart = false;
 

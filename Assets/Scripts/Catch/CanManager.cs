@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CanManager : MonoBehaviour
 {
@@ -19,9 +20,12 @@ public class CanManager : MonoBehaviour
 
     private void Start()
     {
-        Invoke("Useteaching",5f);
-        // m_Delay = Time.time + 1;
-        // EndScore.text = "";
+        ScoreManager.m_IsGameOver = false;
+        ScoreManager.m_ScoreValue = 0;
+        ScoreManager.gameStart = false;
+        m_Delay = 0;
+        EndScore.text = "";
+        Invoke("Useteaching",12f);
     }
 
 
@@ -44,11 +48,16 @@ public class CanManager : MonoBehaviour
             }
         }
     }
+    public void GameOver()
+    {
+        GameManager.instance.Day1missioncompleted = true;
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Main");
+    }
     void Useteaching()
     {
         useteaching.SetActive(false);
         m_Delay = Time.time + 1;
-        EndScore.text = "";
         ScoreManager.gameStart = true;
     }
     private void CreateCan() 

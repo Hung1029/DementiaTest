@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class IdiomManager : MonoBehaviour
 {
@@ -21,6 +21,8 @@ public class IdiomManager : MonoBehaviour
     private UiUnit m_SelectRight = null;
 
     public GameObject useteaching;
+    public GameObject Gameover;
+    public bool gameOver;
 
 #if UNITY_EDITOR
     [UnityEditor.MenuItem("Create/創建題目")]
@@ -56,9 +58,21 @@ public class IdiomManager : MonoBehaviour
         }
         
     }
-
+    private void Update()
+    {
+        if(gameOver)
+        {
+            Gameover.SetActive(true);
+            Invoke("GameOver",5f);
+        }
+    }
+    void GameOver()
+    {
+        SceneManager.LoadScene("CompetitionGame");
+    }
     private void Start()
     {
+        Gameover.SetActive(false);
         Invoke("Useteaching",5f);
         for(int i =0; i < 5; i++)
         {

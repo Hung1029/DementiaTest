@@ -13,7 +13,7 @@ public static class ScoreManager
     public static void AddScore(int add) {
 
         m_ScoreValue += add;
-        GameObject.Find("GameManager").SendMessage("Refrash");
+        GameObject.Find("CatchManager").SendMessage("Refrash");
     }
 
 

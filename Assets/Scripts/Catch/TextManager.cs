@@ -12,8 +12,9 @@ public class TextManager : MonoBehaviour
 
     private void Start()
     {
+        ScoreManager.m_ScoreValue = 0;
         m_Score.text = "分 數 : ";
-        m_Time.text = m_TimeValue.ToString();
+        m_Time.text = "時 間 : " + m_TimeValue.ToString();
         Refrash();
     }
     public void Refrash() {

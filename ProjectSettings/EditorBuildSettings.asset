@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Question.unity
     guid: 35227ab4a032a744c85d6a7be19b058c
+  - enabled: 1
+    path: Assets/Scenes/Catch.unity
+    guid: c18588078c2e8dc4494908b25cdf799c
   m_configObjects: {}

@@ -65,6 +65,7 @@ public class PagesSwitch : MonoBehaviour
         modalsignin.SetActive(true);
         if(GameManager.instance.Day1missioncompleted)
         {
+            Time.timeScale = 1;
             Day1seal.GetComponent<Seal>().stamp = true;
             Invoke("Stamp",1f);
         }
