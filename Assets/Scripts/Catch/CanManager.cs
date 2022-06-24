@@ -64,17 +64,18 @@ public class CanManager : MonoBehaviour
     {
         int r = Random.Range(0, 10);
         UnitBase unit = null;
-        if (r < 4)
+        if (r < 5)
         {
             unit = m_Clone[0];
         }
-        else if (r > 4 && r < 10)
+        else 
         {
             unit = m_Clone[1];
         }
 
         UnitBase createUnit = Instantiate<UnitBase>(unit, m_CanNode);
-        unit.transform.localPosition = new Vector3(Random.Range(-800f, 800f), 1000, 0);
+        createUnit.transform.localPosition = new Vector3(Random.Range(-800f, 800f), 1000, 0);
 
     }
+
 }
