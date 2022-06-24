@@ -15,49 +15,57 @@ public class CanManager : MonoBehaviour
 
     private float m_Delay = 0;
 
+    public GameObject useteaching;
+
     private void Start()
     {
-        m_Delay = Time.time + 1;
-        EndScore.text = "";
+        Invoke("Useteaching",5f);
+        // m_Delay = Time.time + 1;
+        // EndScore.text = "";
     }
 
 
 
     private void Update()
     {
-        if (m_Delay < Time.time)
+        if(ScoreManager.gameStart)
         {
-            m_Delay = Time.time + 1;
-            CreateCan();
-        }
+            if (m_Delay < Time.time)
+            {
+                m_Delay = Time.time + 1;
+                CreateCan();
+            }
 
-        if (ScoreManager.m_IsGameOver)
-        {
-            Time.timeScale = 0;
-            OverObj.SetActive(true);
-            EndScore.text = "EndScore: " + ScoreManager.m_ScoreValue.ToString();
+            if (ScoreManager.m_IsGameOver)
+            {
+                Time.timeScale = 0;
+                OverObj.SetActive(true);
+                EndScore.text = "EndScore: " + ScoreManager.m_ScoreValue.ToString();
+            }
         }
     }
-
+    void Useteaching()
+    {
+        useteaching.SetActive(false);
+        m_Delay = Time.time + 1;
+        EndScore.text = "";
+        ScoreManager.gameStart = true;
+    }
     private void CreateCan() 
     {
-        int r = Random.Range(0, 18);
+        int r = Random.Range(0, 10);
         UnitBase unit = null;
-        if (r < 5)
+        if (r < 4)
         {
             unit = m_Clone[0];
         }
-        else if (r > 5 && r < 10)
+        else if (r > 4 && r < 10)
         {
             unit = m_Clone[1];
         }
-        else {
-
-            unit = m_Clone[2];
-        }
 
         UnitBase createUnit = Instantiate<UnitBase>(unit, m_CanNode);
-        unit.transform.localPosition = new Vector3(Random.Range(-1000f, 1000f), 1000, 0);
+        unit.transform.localPosition = new Vector3(Random.Range(-800f, 800f), 1000, 0);
 
     }
 }

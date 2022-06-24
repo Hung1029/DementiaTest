@@ -27,7 +27,7 @@ public class PlayerControl : MonoBehaviour
 
     public void PointerDownLeft() {
         moveLeft = true;
-        m_BagObj.localPosition = new Vector3(-70, 0, 0);
+        // m_BagObj.localPosition = new Vector3(-70, 0, 0);
     }
     public void PointerUpLeft()
     {
@@ -36,7 +36,7 @@ public class PlayerControl : MonoBehaviour
 
     public void PonterDownRight() {
         moveRight = true;
-        m_BagObj.localPosition = new Vector3(70, 0, 0);
+        // m_BagObj.localPosition = new Vector3(70, 0, 0);
     }
 
     public void PonterUpRight()

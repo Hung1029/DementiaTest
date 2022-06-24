@@ -7,6 +7,7 @@ public static class ScoreManager
 {
     public static int m_ScoreValue = 0;
     public static bool m_IsGameOver = false;
+    public static bool gameStart = false;
 
 
     public static void AddScore(int add) {

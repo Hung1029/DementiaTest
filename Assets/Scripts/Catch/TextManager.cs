@@ -12,27 +12,29 @@ public class TextManager : MonoBehaviour
 
     private void Start()
     {
-        m_Score.text = "Score: ";
+        m_Score.text = "分 數 : ";
         m_Time.text = m_TimeValue.ToString();
         Refrash();
     }
     public void Refrash() {
-        m_Score.text = "Score: " + ScoreManager.m_ScoreValue.ToString();
+        m_Score.text = "分 數 : " + ScoreManager.m_ScoreValue.ToString();
     }
 
     void Update()
     {
-        m_TimeValue -= Time.deltaTime;
-        m_Time.text = "Time: " + m_TimeValue.ToString("0");
+        if(ScoreManager.gameStart)
+        {
+            m_TimeValue -= Time.deltaTime;
+            m_Time.text = "時 間 : " + m_TimeValue.ToString("0");
 
-        if (m_TimeValue <= 0)
-        {
-            ScoreManager.m_IsGameOver = true;
-        } 
-        else if(ScoreManager.m_ScoreValue>=m_GoalValue)
-        {
-            ScoreManager.m_IsGameOver = true;
-        }
+            if (m_TimeValue <= 0)
+            {
+                ScoreManager.m_IsGameOver = true;
+            } 
+            else if(ScoreManager.m_ScoreValue>=m_GoalValue)
+            {
+                ScoreManager.m_IsGameOver = true;
+            }
+        }  
     }
-
 }

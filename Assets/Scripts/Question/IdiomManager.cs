@@ -20,6 +20,8 @@ public class IdiomManager : MonoBehaviour
     private UiUnit m_SelectLeft = null;
     private UiUnit m_SelectRight = null;
 
+    public GameObject useteaching;
+
 #if UNITY_EDITOR
     [UnityEditor.MenuItem("Create/創建題目")]
     public static void CreateIdiom()
@@ -57,6 +59,7 @@ public class IdiomManager : MonoBehaviour
 
     private void Start()
     {
+        Invoke("Useteaching",5f);
         for(int i =0; i < 5; i++)
         {
             for (int j = 0; j < 5; j++)
@@ -115,7 +118,10 @@ public class IdiomManager : MonoBehaviour
         }
 
     }
-
+    void Useteaching()
+    {
+        useteaching.SetActive(false);
+    }
     private void CreateUnit()
     {
         int tempCount = 0;
