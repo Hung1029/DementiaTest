@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CanManager : MonoBehaviour
 {
@@ -8,12 +9,19 @@ public class CanManager : MonoBehaviour
 
     public Transform m_CanNode = null;
 
+    public GameObject OverObj = null;
+
+    public Text EndScore = null;
+
     private float m_Delay = 0;
 
     private void Start()
     {
         m_Delay = Time.time + 1;
+        EndScore.text = "";
     }
+
+
 
     private void Update()
     {
@@ -21,6 +29,13 @@ public class CanManager : MonoBehaviour
         {
             m_Delay = Time.time + 1;
             CreateCan();
+        }
+
+        if (ScoreManager.m_IsGameOver)
+        {
+            Time.timeScale = 0;
+            OverObj.SetActive(true);
+            EndScore.text = "EndScore: " + ScoreManager.m_ScoreValue.ToString();
         }
     }
 

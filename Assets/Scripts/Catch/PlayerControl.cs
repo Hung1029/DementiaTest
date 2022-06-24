@@ -12,6 +12,8 @@ public class PlayerControl : MonoBehaviour
 
     public Transform m_BagObj = null;
 
+    public bool m_IsGameOver = false;
+
     
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,8 @@ public class PlayerControl : MonoBehaviour
         moveLeft = false;
         moveRight = false;
     }
+
+    
 
     public void PointerDownLeft() {
         moveLeft = true;
@@ -44,6 +48,7 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         MovementPlayer();
+        rb.velocity = new Vector2(horizontalMove, rb.velocity.y);
     }
 
     private void MovementPlayer()
@@ -65,10 +70,5 @@ public class PlayerControl : MonoBehaviour
         }
     
     }
-
-    //add the movement force to the player
-    private void FixedUpdate()
-    {
-        rb.velocity = new Vector2(horizontalMove, rb.velocity.y);
-    }
+   
 }
