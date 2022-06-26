@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Initial : MonoBehaviour
 {
+    [SerializeField] AudioData projectileLaunchSFX;
+  
     public string scenename;
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,7 @@ public class Initial : MonoBehaviour
     }
     public void GoToGameScene()
     {
+        AudioManager.Instance.PlaySFX(projectileLaunchSFX);
         SceneManager.LoadScene(scenename);
     }
 }
