@@ -20,6 +20,8 @@ public class IdiomManager : MonoBehaviour
     private UiUnit m_SelectLeft = null;
     private UiUnit m_SelectRight = null;
 
+    private int m_FinishCount = 0;
+
     public GameObject useteaching;
     public GameObject Gameover;
     public bool gameOver;
@@ -50,6 +52,7 @@ public class IdiomManager : MonoBehaviour
             for (int j = 0; j < stringArray[i].Length; j++)
             {
                 TextUnit tu = new TextUnit();
+                tu.m_IdiomUnit = unit;
                 tu.m_Index = j;
                 tu.m_Text = unit.m_Idiom[j];
                 unit.m_TextArray[j] = tu;
@@ -189,6 +192,7 @@ public class IdiomManager : MonoBehaviour
                     ui[i].m_TextData = iu.m_TextArray[i];
                     ui[i].Refrash();
                 }
+                m_FinishCount++;
                 break;
             }
         }
@@ -244,6 +248,18 @@ public class IdiomManager : MonoBehaviour
                 m_SelectLeft.Refrash();
                 m_MenuDataList.Remove(m_SelectLeft);
                 Destroy(m_SelectRight.gameObject);
+
+                if (m_SelectLeft.m_TextData.m_IdiomUnit.CheckSuccess())
+                {
+                    m_FinishCount--;
+                   // Debug.Log("Finsih");
+                }
+
+                if (m_FinishCount <= 0)
+                {
+                    //ResetLevel();
+                    gameOver = true;
+                }
             }
             else
             {

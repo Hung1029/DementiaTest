@@ -17,6 +17,14 @@ public class UiUnit : MonoBehaviour
         RefrashColor();
     }
 
+    public void ResetData()
+    {
+        m_TextData = null;
+        m_IsMenu = false;
+        m_IsSelect = false;
+        RefrashColor();
+    }
+
     public void OnSelect(bool isSelect)
     {
         m_IsSelect = isSelect;
