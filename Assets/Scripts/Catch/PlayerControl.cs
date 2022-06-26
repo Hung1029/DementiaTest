@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -14,16 +15,39 @@ public class PlayerControl : MonoBehaviour
 
     public bool m_IsGameOver = false;
 
-    
+    public Sprite m_Image_normal = null;
+    public Sprite m_Image_plus = null;
+    public Sprite m_Image_reduce = null;
+
+    public Image m_bag=null;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         moveLeft = false;
-        moveRight = false;
+        moveRight = false;       
     }
 
+    public void SetState(int state) {
+
+        if (state == 1)
+        {
+            Debug.Log("1");
+            m_bag.sprite = m_Image_plus;
+            Invoke("ResetState", 0.5f);
+        }
+        else 
+        {
+            Debug.Log("2");
+            m_bag.sprite = m_Image_reduce;
+            Invoke("ResetState", 0.5f);
+        }
     
+    }
+    private void ResetState() {
+        m_bag.sprite = m_Image_normal;
+    }
 
     public void PointerDownLeft() {
         moveLeft = true;
