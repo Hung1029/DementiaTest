@@ -39,7 +39,7 @@ public class DegreeOfDifficulty : MonoBehaviour
     {
         if(num1 == 1)
         {
-            game1.text = "簡單";
+            game1.text = "簡易";
         }
         else if(num1 == 2)
         {
@@ -68,7 +68,7 @@ public class DegreeOfDifficulty : MonoBehaviour
     {
         if(num2 == 1)
         {
-            game2.text = "簡單";
+            game2.text = "簡易";
         }
         else if(num2 == 2)
         {
@@ -98,7 +98,7 @@ public class DegreeOfDifficulty : MonoBehaviour
     {
         if(num3 == 1)
         {
-            game3.text = "簡單";
+            game3.text = "簡易";
         }
         else if(num3 == 2)
         {
