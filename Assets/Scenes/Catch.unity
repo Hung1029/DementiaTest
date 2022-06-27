@@ -2004,13 +2004,13 @@ MonoBehaviour:
   m_bag: {fileID: 457278735}
   Click:
     audioClip: {fileID: 8300000, guid: 7d01ca455abbf4940866b2116205635f, type: 3}
-    volume: 1
+    volume: 0.5
   Catchwrong:
     audioClip: {fileID: 8300000, guid: 7e265f43cd4252b43be44483ecc9d377, type: 3}
-    volume: 1
+    volume: 0.8
   Catchright:
     audioClip: {fileID: 8300000, guid: d54408e5eccdcb442b43714d37b35853, type: 3}
-    volume: 1
+    volume: 0.8
 --- !u!82 &762954642 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 4579839783345887647, guid: 59c0cd203ee636f46ac68c1b53d09e6f,
@@ -2076,13 +2076,13 @@ MonoBehaviour:
   m_bag: {fileID: 1722445383}
   Click:
     audioClip: {fileID: 8300000, guid: 7d01ca455abbf4940866b2116205635f, type: 3}
-    volume: 1
+    volume: 0.5
   Catchwrong:
     audioClip: {fileID: 8300000, guid: 7e265f43cd4252b43be44483ecc9d377, type: 3}
-    volume: 1
+    volume: 0.8
   Catchright:
     audioClip: {fileID: 8300000, guid: d54408e5eccdcb442b43714d37b35853, type: 3}
-    volume: 1
+    volume: 0.8
 --- !u!50 &804478320
 Rigidbody2D:
   serializedVersion: 4
@@ -2179,7 +2179,7 @@ PrefabInstance:
     - target: {fileID: 4579839783374077315, guid: 59c0cd203ee636f46ac68c1b53d09e6f,
         type: 3}
       propertyPath: m_Volume
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59c0cd203ee636f46ac68c1b53d09e6f, type: 3}
@@ -3688,7 +3688,7 @@ MonoBehaviour:
     volume: 1
   wrong:
     audioClip: {fileID: 8300000, guid: 7e265f43cd4252b43be44483ecc9d377, type: 3}
-    volume: 1
+    volume: 0.8
   m_TimeValue: 60
   m_GoalValue: 100
   m_Score: {fileID: 498876526}
@@ -3721,7 +3721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   btnA:
     audioClip: {fileID: 8300000, guid: 7d01ca455abbf4940866b2116205635f, type: 3}
-    volume: 1
+    volume: 0.5
   m_Clone:
   - {fileID: 1705327164}
   - {fileID: 1140950265}
