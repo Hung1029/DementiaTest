@@ -21,6 +21,11 @@ public class PlayerControl : MonoBehaviour
 
     public Image m_bag=null;
 
+    //audio
+    [SerializeField] AudioData Click;
+    [SerializeField] AudioData Catchwrong;
+    [SerializeField] AudioData Catchright;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,12 +40,14 @@ public class PlayerControl : MonoBehaviour
         {
             Debug.Log("1");
             m_bag.sprite = m_Image_plus;
+            AudioManager2.Instance.PlaySFX(Catchright);
             Invoke("ResetState", 0.5f);
         }
         else 
         {
             Debug.Log("2");
             m_bag.sprite = m_Image_reduce;
+            AudioManager2.Instance.PlaySFX(Catchwrong);
             Invoke("ResetState", 0.5f);
         }
     
@@ -50,6 +57,7 @@ public class PlayerControl : MonoBehaviour
     }
 
     public void PointerDownLeft() {
+        AudioManager2.Instance.PlaySFX(Click);
         moveLeft = true;
         // m_BagObj.localPosition = new Vector3(-70, 0, 0);
     }
@@ -59,6 +67,7 @@ public class PlayerControl : MonoBehaviour
     }
 
     public void PonterDownRight() {
+        AudioManager2.Instance.PlaySFX(Click);
         moveRight = true;
         // m_BagObj.localPosition = new Vector3(70, 0, 0);
     }

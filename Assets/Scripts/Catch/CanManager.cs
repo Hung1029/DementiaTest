@@ -18,6 +18,9 @@ public class CanManager : MonoBehaviour
 
     public GameObject useteaching;
 
+    //audio
+    [SerializeField] AudioData gameover;
+
     private void Start()
     {
         ScoreManager.m_IsGameOver = false;
@@ -42,6 +45,7 @@ public class CanManager : MonoBehaviour
 
             if (ScoreManager.m_IsGameOver)
             {
+                AudioManager2.Instance.PlaySFX(gameover);
                 Time.timeScale = 0;
                 OverObj.SetActive(true);
                 EndScore.text = "EndScore: " + ScoreManager.m_ScoreValue.ToString();

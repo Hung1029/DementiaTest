@@ -26,6 +26,12 @@ public class IdiomManager : MonoBehaviour
     public GameObject Gameover;
     public bool gameOver;
 
+    //audio
+    [SerializeField] AudioData Unitclick;
+    [SerializeField] AudioData Unitclick_wrong;
+    [SerializeField] AudioData Unitclick_right;
+    [SerializeField] AudioData finish;
+
 #if UNITY_EDITOR
     [UnityEditor.MenuItem("Create/創建題目")]
     public static void CreateIdiom()
@@ -229,6 +235,7 @@ public class IdiomManager : MonoBehaviour
             }
             m_SelectRight = unit;
             m_SelectRight.OnSelect(true);
+            AudioManager2.Instance.PlaySFX(Unitclick);
         }
         else
         {
@@ -238,12 +245,14 @@ public class IdiomManager : MonoBehaviour
             }
             m_SelectLeft = unit;
             m_SelectLeft.OnSelect(true);
+            AudioManager2.Instance.PlaySFX(Unitclick);
         }
 
         if (m_SelectRight != null && m_SelectLeft != null)
         {
             if (m_SelectRight.m_TextData.m_Text == m_SelectLeft.m_TextData.m_Text)
             {
+                AudioManager2.Instance.PlaySFX(Unitclick_right);
                 m_SelectLeft.m_TextData.m_IsHide = false;
                 m_SelectLeft.Refrash();
                 m_MenuDataList.Remove(m_SelectLeft);
@@ -252,18 +261,21 @@ public class IdiomManager : MonoBehaviour
                 if (m_SelectLeft.m_TextData.m_IdiomUnit.CheckSuccess())
                 {
                     m_FinishCount--;
-                   // Debug.Log("Finsih");
+                    
+                    // Debug.Log("Finsih");
                 }
 
                 if (m_FinishCount <= 0)
                 {
                     //ResetLevel();
+                    AudioManager2.Instance.PlaySFX(finish);
                     gameOver = true;
                 }
             }
             else
             {
                 m_SelectRight.OnSelect(false);
+                AudioManager2.Instance.PlaySFX(Unitclick_wrong);
             }
             m_SelectLeft.OnSelect(false);
             m_SelectLeft = null;

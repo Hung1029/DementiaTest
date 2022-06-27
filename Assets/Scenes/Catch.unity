@@ -1715,6 +1715,15 @@ MonoBehaviour:
   m_Image_plus: {fileID: 21300000, guid: 4ae473c46bde5e549a83b4e296219dc8, type: 3}
   m_Image_reduce: {fileID: 21300000, guid: 17194b914a1140c489bb04faa6fbe521, type: 3}
   m_bag: {fileID: 457278735}
+  Click:
+    audioClip: {fileID: 8300000, guid: 7d01ca455abbf4940866b2116205635f, type: 3}
+    volume: 1
+  Catchwrong:
+    audioClip: {fileID: 8300000, guid: 7d2f852032713bc41a53d69c12dc958f, type: 3}
+    volume: 1
+  Catchright:
+    audioClip: {fileID: 8300000, guid: 6b5bd1ddcc827a64f9dcd7313c5eae9b, type: 3}
+    volume: 1
 --- !u!1 &804478317
 GameObject:
   m_ObjectHideFlags: 0
@@ -1773,6 +1782,15 @@ MonoBehaviour:
   m_Image_plus: {fileID: 21300000, guid: 1d99850df635b5d4b9d1be482dbe383a, type: 3}
   m_Image_reduce: {fileID: 21300000, guid: ad0225b59d7a28849bf1a21460fc1b75, type: 3}
   m_bag: {fileID: 1722445383}
+  Click:
+    audioClip: {fileID: 8300000, guid: 7d01ca455abbf4940866b2116205635f, type: 3}
+    volume: 1
+  Catchwrong:
+    audioClip: {fileID: 8300000, guid: 7d2f852032713bc41a53d69c12dc958f, type: 3}
+    volume: 1
+  Catchright:
+    audioClip: {fileID: 8300000, guid: 6b5bd1ddcc827a64f9dcd7313c5eae9b, type: 3}
+    volume: 1
 --- !u!50 &804478320
 Rigidbody2D:
   serializedVersion: 4
@@ -3092,6 +3110,9 @@ MonoBehaviour:
   OverObj: {fileID: 11853278}
   EndScore: {fileID: 2017951485}
   useteaching: {fileID: 887666915}
+  gameover:
+    audioClip: {fileID: 8300000, guid: 7425c2b894e159041bfad6733a949c31, type: 3}
+    volume: 1
 --- !u!1 &1796214130
 GameObject:
   m_ObjectHideFlags: 0
