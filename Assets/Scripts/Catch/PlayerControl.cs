@@ -13,8 +13,6 @@ public class PlayerControl : MonoBehaviour
 
     public Transform m_BagObj = null;
 
-    public bool m_IsGameOver = false;
-
     public Sprite m_Image_normal = null;
     public Sprite m_Image_plus = null;
     public Sprite m_Image_reduce = null;
@@ -38,14 +36,14 @@ public class PlayerControl : MonoBehaviour
 
         if (state == 1)
         {
-            Debug.Log("1");
+            //Debug.Log("1");
             m_bag.sprite = m_Image_plus;
             AudioManager2.Instance.PlaySFX(Catchright);
             Invoke("ResetState", 0.5f);
         }
         else 
         {
-            Debug.Log("2");
+            //Debug.Log("2");
             m_bag.sprite = m_Image_reduce;
             AudioManager2.Instance.PlaySFX(Catchwrong);
             Invoke("ResetState", 0.5f);

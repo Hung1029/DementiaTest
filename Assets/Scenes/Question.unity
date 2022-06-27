@@ -1089,10 +1089,10 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: 7e265f43cd4252b43be44483ecc9d377, type: 3}
     volume: 1
   Unitclick_right:
-    audioClip: {fileID: 8300000, guid: 6b5bd1ddcc827a64f9dcd7313c5eae9b, type: 3}
+    audioClip: {fileID: 8300000, guid: d54408e5eccdcb442b43714d37b35853, type: 3}
     volume: 1
   finish:
-    audioClip: {fileID: 8300000, guid: 7425c2b894e159041bfad6733a949c31, type: 3}
+    audioClip: {fileID: 8300000, guid: 87d40526213acb142aa8d13c8756c2fd, type: 3}
     volume: 1
 --- !u!4 &1245655574
 Transform:
@@ -1451,6 +1451,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579839783374077315, guid: 59c0cd203ee636f46ac68c1b53d09e6f,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59c0cd203ee636f46ac68c1b53d09e6f, type: 3}

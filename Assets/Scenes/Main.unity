@@ -10391,6 +10391,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 4579839782999209200, guid: 59c0cd203ee636f46ac68c1b53d09e6f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Audio Manager
+      objectReference: {fileID: 0}
     - target: {fileID: 4579839782999209203, guid: 59c0cd203ee636f46ac68c1b53d09e6f,
         type: 3}
       propertyPath: m_RootOrder
@@ -10445,6 +10450,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579839783374077315, guid: 59c0cd203ee636f46ac68c1b53d09e6f,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4579839783374077315, guid: 59c0cd203ee636f46ac68c1b53d09e6f,
         type: 3}

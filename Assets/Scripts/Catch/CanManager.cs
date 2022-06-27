@@ -45,10 +45,10 @@ public class CanManager : MonoBehaviour
 
             if (ScoreManager.m_IsGameOver)
             {
-                AudioManager2.Instance.PlaySFX(gameover);
-                Time.timeScale = 0;
                 OverObj.SetActive(true);
                 EndScore.text = "EndScore: " + ScoreManager.m_ScoreValue.ToString();
+                Time.timeScale = 0;
+                AudioManager2.Instance.PlaySFX(gameover);
             }
         }
     }
