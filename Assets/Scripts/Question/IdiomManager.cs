@@ -82,7 +82,7 @@ public class IdiomManager : MonoBehaviour
     private void Start()
     {
         Gameover.SetActive(false);
-        Invoke("Useteaching",5f);
+        Invoke("Useteaching",8f);
         for(int i =0; i < 5; i++)
         {
             for (int j = 0; j < 5; j++)
