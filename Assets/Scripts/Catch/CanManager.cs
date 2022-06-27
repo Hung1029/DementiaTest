@@ -13,6 +13,8 @@ public class CanManager : MonoBehaviour
 
     public GameObject OverObj = null;
 
+    public GameObject RestartObj = null;
+
     public Text EndScore = null;
 
     private float m_Delay = 0;
@@ -21,7 +23,9 @@ public class CanManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         ScoreManager.m_IsGameOver = false;
+        ScoreManager.m_IsRestart = false;
         ScoreManager.m_ScoreValue = 0;
         ScoreManager.gameStart = false;
         m_Delay = 0;
@@ -44,7 +48,13 @@ public class CanManager : MonoBehaviour
             if (ScoreManager.m_IsGameOver)
             {
                 OverObj.SetActive(true);
-                EndScore.text = "EndScore: " + ScoreManager.m_ScoreValue.ToString();
+               // EndScore.text = "EndScore: " + ScoreManager.m_ScoreValue.ToString();
+                Time.timeScale = 0;
+            }
+            else if (ScoreManager.m_IsRestart)
+            {
+                RestartObj.SetActive(true);
+                //EndScore.text = "EndScore: " + ScoreManager.m_ScoreValue.ToString();
                 Time.timeScale = 0;
             }
         }
@@ -56,6 +66,15 @@ public class CanManager : MonoBehaviour
         AudioManager2.Instance.PlaySFX(btnA);
         SceneManager.LoadScene("Main");
     }
+
+    public void Restart()
+    {
+        Time.timeScale = 1;
+        AudioManager2.Instance.PlaySFX(btnA);
+        SceneManager.LoadScene("Catch");
+        
+    }
+
     void Useteaching()
     {
         useteaching.SetActive(false);

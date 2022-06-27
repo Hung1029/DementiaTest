@@ -7,6 +7,7 @@ public static class ScoreManager
 {
     public static int m_ScoreValue = 0;
     public static bool m_IsGameOver;
+    public static bool m_IsRestart;
     public static bool gameStart = false;
 
 
@@ -15,8 +16,4 @@ public static class ScoreManager
         m_ScoreValue += add;
         GameObject.Find("CatchManager").SendMessage("Refrash");
     }
-
-
-
-
 }

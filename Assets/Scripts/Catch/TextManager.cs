@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TextManager : MonoBehaviour
 {
     [SerializeField] AudioData gameoverA;
+    [SerializeField] AudioData wrong;
     public float m_TimeValue = 60;
     public float m_GoalValue = 100;
     public Text m_Score = null;
@@ -13,6 +14,7 @@ public class TextManager : MonoBehaviour
 
     private void Start()
     {
+        m_TimeValue = 60;
         ScoreManager.m_ScoreValue = 0;
         m_Score.text = "分 數 : ";
         m_Time.text = "時 間 : " + m_TimeValue.ToString();
@@ -31,7 +33,11 @@ public class TextManager : MonoBehaviour
 
             if (m_TimeValue <= 0)
             {
-                ScoreManager.m_IsGameOver = true;
+                AudioManager2.Instance.PlaySFX(wrong);
+                ScoreManager.m_IsRestart = true;
+                m_TimeValue = 60;
+
+                // ScoreManager.m_IsGameOver = true;
             } 
             else if(ScoreManager.m_ScoreValue>=m_GoalValue)
             {
