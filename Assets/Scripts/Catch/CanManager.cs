@@ -50,6 +50,7 @@ public class CanManager : MonoBehaviour
                 OverObj.SetActive(true);
                // EndScore.text = "EndScore: " + ScoreManager.m_ScoreValue.ToString();
                 Time.timeScale = 0;
+                ScoreManager.m_IsGameOver = false;
             }
             else if (ScoreManager.m_IsRestart)
             {
