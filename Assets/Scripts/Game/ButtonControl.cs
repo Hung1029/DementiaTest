@@ -13,6 +13,7 @@ public class ButtonControl : MonoBehaviour
     public Sprite correct;
     public Sprite mistake;
     public Sprite normal;
+    public Sprite selected;
     public Image[] G1Buttons;
     public Image[] G2Buttons;
 
@@ -174,6 +175,7 @@ public class ButtonControl : MonoBehaviour
                 p1button1 = true;
             }
             AudioManager2.Instance.PlaySFX(btnA);
+            G2Buttons[0].sprite = selected;
             order1 += 1;
         }
         if(P1orderG2 && gameControl.canPush)
@@ -183,6 +185,7 @@ public class ButtonControl : MonoBehaviour
                 p1button1 = true;
             }
             AudioManager2.Instance.PlaySFX(btnA);
+            G2Buttons[0].sprite = selected;
             order1 += 1;
         }
     }
@@ -195,12 +198,14 @@ public class ButtonControl : MonoBehaviour
                 p1button2 = true;
             }
             AudioManager2.Instance.PlaySFX(btnA);
+            G2Buttons[1].sprite = selected;
             order1 += 1;
         }
         if(P1orderG2 && gameControl.canPush)
         {
             p1button2 = true;
             AudioManager2.Instance.PlaySFX(btnA);
+            G2Buttons[1].sprite = selected;
             order1 += 1;
         }
     }
@@ -213,6 +218,7 @@ public class ButtonControl : MonoBehaviour
                 p1button3 = true;
             }
             AudioManager2.Instance.PlaySFX(btnA);
+            G2Buttons[2].sprite = selected;
             order1 += 1;
         }
         if(P1orderG2 && gameControl.canPush)
@@ -222,6 +228,7 @@ public class ButtonControl : MonoBehaviour
                 p1button3 = true;
             }
             AudioManager2.Instance.PlaySFX(btnA);
+            G2Buttons[2].sprite = selected;
             order1 += 1;
         }
     }
@@ -328,6 +335,7 @@ public class ButtonControl : MonoBehaviour
                 p2button1 = true;
             }
             AudioManager2.Instance.PlaySFX(btnA);
+            G2Buttons[3].sprite = selected;
             order2 += 1;
         }
         if(P2orderG2 && gameControl.canPush)
@@ -337,6 +345,7 @@ public class ButtonControl : MonoBehaviour
                 p2button1 = true;
             }
             AudioManager2.Instance.PlaySFX(btnA);
+            G2Buttons[3].sprite = selected;
             order2 += 1;
         }
     }
@@ -349,12 +358,14 @@ public class ButtonControl : MonoBehaviour
                 p2button2 = true;
             }
             AudioManager2.Instance.PlaySFX(btnA);
+            G2Buttons[4].sprite = selected;
             order2 += 1;
         }
         if(P2orderG2 && gameControl.canPush)
         {
             p2button2 = true;
             AudioManager2.Instance.PlaySFX(btnA);
+            G2Buttons[4].sprite = selected;
             order2 += 1;
         }
     }
@@ -367,6 +378,7 @@ public class ButtonControl : MonoBehaviour
                 p2button3 = true;
             }
             AudioManager2.Instance.PlaySFX(btnA);
+            G2Buttons[5].sprite = selected;
             order2 += 1;
         }
         if(P2orderG2 && gameControl.canPush)
@@ -376,6 +388,7 @@ public class ButtonControl : MonoBehaviour
                 p2button3 = true;
             }
             AudioManager2.Instance.PlaySFX(btnA);
+            G2Buttons[5].sprite = selected;
             order2 += 1;
         }
     }

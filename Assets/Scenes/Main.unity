@@ -5683,7 +5683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   btnA:
     audioClip: {fileID: 8300000, guid: 7d01ca455abbf4940866b2116205635f, type: 3}
-    volume: 1
+    volume: 0.5
   scenename: Question
   pagesettings: {fileID: 1335745644}
   modalsignin: {fileID: 1003234119}
@@ -7135,7 +7135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   btnA:
     audioClip: {fileID: 8300000, guid: 7d01ca455abbf4940866b2116205635f, type: 3}
-    volume: 1
+    volume: 0.5
   SportImg: {fileID: 1641739534}
   sport1: {fileID: 1288151521}
   sport1_start: {fileID: 757684854}
@@ -8127,7 +8127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   btnA:
     audioClip: {fileID: 8300000, guid: 7d01ca455abbf4940866b2116205635f, type: 3}
-    volume: 1
+    volume: 0.5
   scenename: Question
   game1: {fileID: 1510437587}
   num1: 0
@@ -10466,7 +10466,7 @@ PrefabInstance:
     - target: {fileID: 4579839783374077315, guid: 59c0cd203ee636f46ac68c1b53d09e6f,
         type: 3}
       propertyPath: m_Volume
-      value: 0.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4579839783374077315, guid: 59c0cd203ee636f46ac68c1b53d09e6f,
         type: 3}

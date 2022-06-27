@@ -887,7 +887,7 @@ PrefabInstance:
     - target: {fileID: 4579839783374077315, guid: 59c0cd203ee636f46ac68c1b53d09e6f,
         type: 3}
       propertyPath: m_Volume
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59c0cd203ee636f46ac68c1b53d09e6f, type: 3}
@@ -5095,19 +5095,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   btnA:
     audioClip: {fileID: 8300000, guid: 7d01ca455abbf4940866b2116205635f, type: 3}
-    volume: 1
+    volume: 0.5
   mistakeA:
     audioClip: {fileID: 8300000, guid: 7e265f43cd4252b43be44483ecc9d377, type: 3}
-    volume: 1
+    volume: 0.8
   currentA:
     audioClip: {fileID: 8300000, guid: d54408e5eccdcb442b43714d37b35853, type: 3}
-    volume: 1
+    volume: 0.8
   finishA:
     audioClip: {fileID: 8300000, guid: 87d40526213acb142aa8d13c8756c2fd, type: 3}
     volume: 1
   correct: {fileID: 21300000, guid: 5524e35df5e9df34daa29b81ee25e5d8, type: 3}
   mistake: {fileID: 21300000, guid: ccce8f68a3e842c45987e9472e31fcea, type: 3}
   normal: {fileID: 21300000, guid: bf006c5ba15c3f64b85c3e4ba6011542, type: 3}
+  selected: {fileID: 21300000, guid: ea6d6ee4ae1eb2d47ae740484fd3f1aa, type: 3}
   G1Buttons:
   - {fileID: 1872649591}
   - {fileID: 2085526244}
