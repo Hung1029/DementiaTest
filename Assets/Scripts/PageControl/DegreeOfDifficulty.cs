@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class DegreeOfDifficulty : MonoBehaviour
 {
+    [SerializeField] AudioData btnA;
     public string scenename;
     
     public Text game1;
@@ -56,6 +57,7 @@ public class DegreeOfDifficulty : MonoBehaviour
         {
             num1 += 1;
         }
+        AudioManager.Instance.PlaySFX(btnA);
     }
     public void Num1reduce()
     {
@@ -63,6 +65,7 @@ public class DegreeOfDifficulty : MonoBehaviour
         {
             num1 -= 1;
         }
+        AudioManager.Instance.PlaySFX(btnA);
     }
     void Game2Degree()
     {
@@ -86,6 +89,7 @@ public class DegreeOfDifficulty : MonoBehaviour
         {
             num2 += 1;
         }
+        AudioManager.Instance.PlaySFX(btnA);
     }
     public void Num2reduce()
     {
@@ -93,6 +97,7 @@ public class DegreeOfDifficulty : MonoBehaviour
         {
             num2 -= 1;
         }
+        AudioManager.Instance.PlaySFX(btnA);
     }
     void Game3Degree()
     {
@@ -116,6 +121,7 @@ public class DegreeOfDifficulty : MonoBehaviour
         {
             num3 += 1;
         }
+        AudioManager.Instance.PlaySFX(btnA);
     }
     public void Num3reduce()
     {
@@ -123,10 +129,11 @@ public class DegreeOfDifficulty : MonoBehaviour
         {
             num3 -= 1;
         }
+        AudioManager.Instance.PlaySFX(btnA);
     }
     public void GameStart()
     {
-        Debug.Log("GoGo");
+        AudioManager.Instance.PlaySFX(btnA);
         SceneManager.LoadScene(scenename);
     }
 }

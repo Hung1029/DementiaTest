@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PagesSwitch : MonoBehaviour
 {
+    [SerializeField] AudioData btnA;
     public string scenename;
     
     public GameObject pagesettings;
@@ -54,18 +55,20 @@ public class PagesSwitch : MonoBehaviour
     }
     public void SwitchtoPages_Setting()
     {
+        AudioManager.Instance.PlaySFX(btnA);
         pagesettings.SetActive(true);
     }
     public void SwitchtoPages_SettingBac()
     {
+        AudioManager.Instance.PlaySFX(btnA);
         pagesettings.SetActive(false);
     }
     public void SignIn()
     {
+        AudioManager.Instance.PlaySFX(btnA);
         modalsignin.SetActive(true);
         if(GameManager.instance.Day1missioncompleted)
         {
-            Time.timeScale = 1;
             Day1seal.GetComponent<Seal>().stamp = true;
             Invoke("Stamp",1f);
         }
@@ -76,22 +79,27 @@ public class PagesSwitch : MonoBehaviour
     }
     public void SignInBac()
     {
+        AudioManager.Instance.PlaySFX(btnA);
         modalsignin.SetActive(false);
     }
     public void KnowledgeReview()
     {
+        AudioManager.Instance.PlaySFX(btnA);
         modalKnowledgeReview.SetActive(true);
     }
     public void KnowledgeReviewBac()
     {
+        AudioManager.Instance.PlaySFX(btnA);
         modalKnowledgeReview.SetActive(false);
     }
     public void KnowledgeMusic()
     {
+        AudioManager.Instance.PlaySFX(btnA);
         modalMusic.SetActive(true);
     }
     public void KnowledgeMusicBac()
     {
+        AudioManager.Instance.PlaySFX(btnA);
         modalMusic.SetActive(false);
     }
     public void GoToGameScene()

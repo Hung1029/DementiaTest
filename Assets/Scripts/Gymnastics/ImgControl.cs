@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ImgControl : MonoBehaviour
 {
+    [SerializeField] AudioData btnA;
     public GameObject SportImg;
     public GameObject sport1;
     public GameObject sport1_start;
@@ -79,11 +80,13 @@ public class ImgControl : MonoBehaviour
     }
     public void Sport_start()
     {
+        AudioManager.Instance.PlaySFX(btnA);
         SportImg.SetActive(true);
         img1 = true;
     }
     public void SportBac()
     {
+        AudioManager.Instance.PlaySFX(btnA);
         img1 = false;
         sportStart = false;
         SportImg.SetActive(false);

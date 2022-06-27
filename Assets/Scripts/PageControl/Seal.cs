@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Seal : MonoBehaviour
 {
+    [SerializeField] AudioData Stamped;
     Image image;
     private float i;
     public float fadspeed = 0.1f;
@@ -12,6 +13,7 @@ public class Seal : MonoBehaviour
     public float scale;
     public bool stamp;
     private bool stamped;
+    private bool stampping;
     public GameObject knowledgeMusic;
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,7 @@ public class Seal : MonoBehaviour
         image = GetComponent<Image>();
         i=30;
         stamped = false;
+        stampping = true;
     }
 
     // Update is called once per frame
@@ -31,6 +34,11 @@ public class Seal : MonoBehaviour
     }
     void Stamp()
     {
+        if(stampping)
+        {
+            AudioManager.Instance.PlaySFX(Stamped);
+            stampping = false;
+        }
         Invoke("FadeIn",time);
         ZoomOut();
         Invoke("KnowledgeMusic",1f);

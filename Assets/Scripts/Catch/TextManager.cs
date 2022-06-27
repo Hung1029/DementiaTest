@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class TextManager : MonoBehaviour
 {
+    [SerializeField] AudioData gameoverA;
     public float m_TimeValue = 60;
     public float m_GoalValue = 100;
     public Text m_Score = null;
@@ -34,7 +35,9 @@ public class TextManager : MonoBehaviour
             } 
             else if(ScoreManager.m_ScoreValue>=m_GoalValue)
             {
+                AudioManager2.Instance.PlaySFX(gameoverA);
                 ScoreManager.m_IsGameOver = true;
+                ScoreManager.m_ScoreValue = 0;
             }
         }  
     }

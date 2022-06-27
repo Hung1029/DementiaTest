@@ -847,7 +847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Day1missioncompleted: 0
   Day1stamped: 0
-  isNewbie: 0
+  isNewbie: 1
 --- !u!4 &1408076501
 Transform:
   m_ObjectHideFlags: 0

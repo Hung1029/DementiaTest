@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class CanManager : MonoBehaviour
 {
+    [SerializeField] AudioData btnA;
     public UnitBase[] m_Clone = null;
 
     public Transform m_CanNode = null;
@@ -17,9 +18,6 @@ public class CanManager : MonoBehaviour
     private float m_Delay = 0;
 
     public GameObject useteaching;
-
-    //audio
-    [SerializeField] AudioData gameover;
 
     private void Start()
     {
@@ -48,7 +46,6 @@ public class CanManager : MonoBehaviour
                 OverObj.SetActive(true);
                 EndScore.text = "EndScore: " + ScoreManager.m_ScoreValue.ToString();
                 Time.timeScale = 0;
-                AudioManager2.Instance.PlaySFX(gameover);
             }
         }
     }
@@ -56,6 +53,7 @@ public class CanManager : MonoBehaviour
     {
         GameManager.instance.Day1missioncompleted = true;
         Time.timeScale = 1;
+        AudioManager2.Instance.PlaySFX(btnA);
         SceneManager.LoadScene("Main");
     }
     void Useteaching()

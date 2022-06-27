@@ -424,7 +424,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72726563}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -973,7 +973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Day1missioncompleted: 0
   Day1stamped: 0
-  isNewbie: 1
+  isNewbie: 0
 --- !u!4 &174391032
 Transform:
   m_ObjectHideFlags: 0
@@ -2354,6 +2354,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a0ac8b4ba53964c9f1423b0dc24398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Stamped:
+    audioClip: {fileID: 8300000, guid: 7425c2b894e159041bfad6733a949c31, type: 3}
+    volume: 1
   fadspeed: 5
   time: 0.2
   scale: 0.1
@@ -5678,6 +5681,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 394b98550b1b2384b812368fe5ebbecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  btnA:
+    audioClip: {fileID: 8300000, guid: 7d01ca455abbf4940866b2116205635f, type: 3}
+    volume: 1
   scenename: Question
   pagesettings: {fileID: 1335745644}
   modalsignin: {fileID: 1003234119}
@@ -7127,6 +7133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb4c66152b70dcb488537dad62af10c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  btnA:
+    audioClip: {fileID: 8300000, guid: 7d01ca455abbf4940866b2116205635f, type: 3}
+    volume: 1
   SportImg: {fileID: 1641739534}
   sport1: {fileID: 1288151521}
   sport1_start: {fileID: 757684854}
@@ -8116,6 +8125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e799d4aaf5ab97d48a4dc5bfab902cb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  btnA:
+    audioClip: {fileID: 8300000, guid: 7d01ca455abbf4940866b2116205635f, type: 3}
+    volume: 1
   scenename: Question
   game1: {fileID: 1510437587}
   num1: 0
